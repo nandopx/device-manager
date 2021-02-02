@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "device-manager", "device-manager\device-manager.csproj", "{4487B75C-33E2-49B7-AFD5-9E6A293409AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4487B75C-33E2-49B7-AFD5-9E6A293409AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4487B75C-33E2-49B7-AFD5-9E6A293409AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4487B75C-33E2-49B7-AFD5-9E6A293409AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4487B75C-33E2-49B7-AFD5-9E6A293409AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49849005-421D-43F0-AB15-F621C21283FA}
+	EndGlobalSection
+EndGlobal
