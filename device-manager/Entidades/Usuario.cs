@@ -1,4 +1,5 @@
-﻿using System;
+﻿using device_manager;
+using System;
 using System.Collections.Generic;
 
 namespace Entidades
@@ -20,19 +21,31 @@ namespace Entidades
             Email = email;
         }
 
-        public static void criarUsuario(List<Usuario> usuario)
+        public static void criarUsuario()
         {
+            Console.Clear();
+            Console.WriteLine("===== CADASTRO DE USUARIO =====\n");
             Console.Write("Nome: ");
             var nome = Console.ReadLine();
             Console.Write("CPF: ");
             var cpf = Console.ReadLine();
             Console.Write("Email: ");
             var email = Console.ReadLine();
-            usuario.Add(new Usuario(nome, cpf, email));
+            new Usuario(nome, cpf, email);
+            Console.Clear();
+            Console.WriteLine("Usuário cadastrado com sucesso!");
+            Console.Write("Deseja cadastrar outro? (s-sim/ n-não): ");
+            var resposta = char.Parse( Console.ReadLine().ToLower() );
+            if (resposta == 's')
+                criarUsuario();
+            else
+                Menu.MenuUsuarios();
         }
 
         public static void editarUsuario(List<Usuario> usuario)
         {
+            Console.Clear();
+            Console.WriteLine( "===== EDIÇÃO DE USUARIO =====\n" );
             Console.Write("CPF a editar: ");
             var cpf = Console.ReadLine();
             var editar = usuario.Find(x => x.CPF == cpf);
@@ -46,6 +59,8 @@ namespace Entidades
 
         public static void excluirUsuario(List<Usuario> usuario)
         {
+            Console.Clear();
+            Console.WriteLine( "===== EXCLUSAO DE USUARIO =====\n" );
             Console.Write("CPF a excluir: ");
             var cpf = Console.ReadLine();
             usuario.Remove(usuario.Find(x => x.CPF == cpf));
@@ -53,6 +68,8 @@ namespace Entidades
 
         public static void ConsultarUsuario(List<Usuario> usuario)
         {
+            Console.Clear();
+            Console.WriteLine( "===== CONSULTA USUARIO =====\n" );
             Console.Write("CPF: ");
             var cpf = Console.ReadLine();
             Console.WriteLine(usuario.Find(x => x.CPF == cpf));
