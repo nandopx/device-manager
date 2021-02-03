@@ -6,6 +6,8 @@ namespace device_manager
 {
     class Menu
     {
+        public static List<Usuario> usuario { get; set; } = new List<Usuario>();
+
         public static void MainMenu ()
         {
             Console.Clear();
@@ -35,24 +37,22 @@ namespace device_manager
             Console.WriteLine("1 - Cadastrar usuário");
             Console.WriteLine("2 - Editar usuário");
             Console.WriteLine("3 - Excluir usuário");
-            Console.WriteLine("4 - Voltar");
+            Console.WriteLine("4 - Consulta por CPF");
+            Console.WriteLine("5 - Listar todos os usuários" );
+            Console.WriteLine("6 - Voltar");
             Console.Write( "\nOpção: " );
             var opcao = int.Parse( Console.ReadLine() );
 
             switch (opcao)
             {
-                case 1: Usuario.criarUsuario(); break;
-                case 2:
-                    List<Usuario> editar = new List<Usuario>();
-                    Usuario.editarUsuario(editar); break;
-                case 3:
-                    List<Usuario> excluir = new List<Usuario>();
-                    Usuario.excluirUsuario(excluir); break;
-                case 4: MainMenu(); break;
-                default:
-                    break;
+                case 1: Usuario.criarUsuario(usuario); break;
+                case 2: Usuario.editarUsuario(usuario); break;
+                case 3: Usuario.excluirUsuario(usuario); break;
+                case 4: Usuario.ConsultaPorCPF( usuario ); break;
+                case 5: Usuario.ListarUsuarios( usuario); break;
+                case 6: MainMenu(); break;
+                default: Console.WriteLine("Opção inválida!"); break;
             }
-
         }
 
         public static void MenuAparelhos ()
